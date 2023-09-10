@@ -1,0 +1,17 @@
+Language	Translation
+          Afrikaans:	Hello Wêreld!
+          Albanian:	Përshendetje Botë!
+          Amharic:	ሰላም ልዑል!
+          Arabic:	مرحبا بالعالم!
+          Armenia:	Բարեւ աշխարհ!
+          Basque:	Kaixo Mundua!
+          Belarussian:	Прывітанне Сусвет!
+          Bengali:	ওহে বিশ্ব!
+          Bulgarian:	Здравей свят!
+          Catalan:	Hola món!
+          Chichewa:	Moni Dziko Lapansi!
+          Chinese:	你好世界！
+          Croatian:	Pozdrav svijete!
+          Czech:	Ahoj světe!
+          Danish:	Hej Verden!
+          Dutch:	Hallo Wereld!
