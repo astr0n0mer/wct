@@ -33,6 +33,18 @@ export const allowedFlags = {
   },
 } as const;
 
-export const showHelp = () => {
-  console.log("Help is on the way.");
+export const printHelp = () => {
+  const help = `
+Usage: wct [OPTION(S)] FILEPATH(S)
+
+Example: wct -c -l file-1.txt file-2.html
+
+-c, --bytes\t\t print the byte count
+-m, --chars\t\t print the character count
+-l, --lines\t\t print the line count
+-L, --max-line-length\t print the length of the longest line
+-w, --words\t\t print the word count
+-h, --help\t\t print the help message
+  `;
+  console.log(help);
 };

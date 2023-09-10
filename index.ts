@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { parseArgs } from "util";
 import { WordCounter } from "./word-counter";
-import { allowedFlags, showHelp, WordCount } from "./word-counter-config";
+import { allowedFlags, printHelp, WordCount } from "./word-counter-config";
 
 export const getUserInputs = () => {
   const { values: receivedFlags, positionals: filepaths } = parseArgs({
@@ -67,8 +67,9 @@ const { filepaths, flags } = getUserInputs();
 const totalCount: WordCount = {};
 
 if (flags.includes("help")) {
-  showHelp();
+  printHelp();
 } else if (filepaths.length < 1) {
+  printHelp();
   throw new Error("NO_FILEPATH_SPECIFIED");
 } else {
   filepaths.forEach((filepath: string) => {
