@@ -31,8 +31,8 @@ describe("WordCounter", () => {
     count = {
       line: 16,
       word: 50,
-      char: 564,
-      byte: 657,
+      char: 548,
+      byte: 641,
       maxLineLength: 43,
     };
   });
