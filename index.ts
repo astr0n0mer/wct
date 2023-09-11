@@ -3,6 +3,10 @@ import { parseArgs } from "util";
 import { WordCounter } from "./word-counter";
 import { allowedFlags, printHelp, WordCount } from "./word-counter-config";
 
+/**
+ * This function is used to read the filepaths and flags command line arguments from the user.
+ * @returns An object with filepaths and flags entered by the user.
+ */
 export const getUserInputs = () => {
   const { values: receivedFlags, positionals: filepaths } = parseArgs({
     options: allowedFlags,
@@ -17,6 +21,11 @@ export const getUserInputs = () => {
   return { flags, filepaths };
 };
 
+/**
+ *
+ * @param str String whose byte, character, word & line counts and maximum line length are to be found.
+ * @returns An object with the byte, character, word & line counts and maximum line length.
+ */
 export const getStringWordCounts = (str: string) => {
   const count: WordCount = {};
 
@@ -37,6 +46,11 @@ export const getStringWordCounts = (str: string) => {
   return count;
 };
 
+/**
+ *
+ * @param totalCount The accumulative byte, character, word & line count and maximum line length.
+ * @param count The byte, character, word & line count and maximum line length for the current file.
+ */
 export const updateTotalCounts = (totalCount: WordCount, count: WordCount) => {
   flags.forEach((flag: string) => {
     if (flag === "max-line-length") {
@@ -51,6 +65,11 @@ export const updateTotalCounts = (totalCount: WordCount, count: WordCount) => {
   });
 };
 
+/**
+ *
+ * @param count The byte, character, word & line count and maximum line length for the current file.
+ * @param filepath The filepath of the current file.
+ */
 export const printFileWordCounts = (count: WordCount, filepath: string) => {
   let output = "";
   output += count.lines ? count.lines + "\t" : "";

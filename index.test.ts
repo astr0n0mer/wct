@@ -84,7 +84,7 @@ describe("User", () => {
   it("Should get the byte count when a filepath is specified with -c or --bytes flag", () => {
     // Given
     const filepath = "./test-assets/_hello-world.txt";
-    const actualByteCount = "2392";
+    const actualByteCount = "2318";
     const command = `${baseCommand} -c ${filepath}`;
 
     // When
@@ -98,7 +98,7 @@ describe("User", () => {
   it("Should get the character count when a filepath is specified with -m or --chars flag", () => {
     // Given
     const filepath = "./test-assets/_hello-world.txt";
-    const actualCharCount = "1865";
+    const actualCharCount = "1791";
     const command = `${baseCommand} -m ${filepath}`;
 
     // When
@@ -149,5 +149,21 @@ describe("User", () => {
 
     // Then
     expect(spawnOutput).toContain(actualWordCount);
+  });
+
+  it("Should get the word and line count when a filepath is specified with both --words and --lines options", () => {
+    // Given
+    const filepath = "./test-assets/_hello-world.txt";
+    const actualWordCount = "229";
+    const actualLineCount = "74";
+    const command = `${baseCommand} --words --lines ${filepath}`;
+
+    // When
+    const spawn = spawnSync(command, { shell: true });
+    const spawnOutput = spawn.stdout.toString();
+
+    // Then
+    expect(spawnOutput).toContain(actualWordCount);
+    expect(spawnOutput).toContain(actualLineCount);
   });
 });

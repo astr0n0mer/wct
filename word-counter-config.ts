@@ -39,6 +39,7 @@ Usage: wct [OPTION(S)] FILEPATH(S)
 
 Example: wct -c -l file-1.txt file-2.html
 
+Options\t\t\t Description
 -c, --bytes\t\t print the byte count
 -m, --chars\t\t print the character count
 -l, --lines\t\t print the line count
